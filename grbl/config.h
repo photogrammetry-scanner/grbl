@@ -338,6 +338,22 @@
 // The hardware PWM output on pin D11 is required for variable spindle output voltages.
 #define VARIABLE_SPINDLE // Default enabled. Comment to disable.
 
+// Enables the spindle PWM output to be as compliant with a servo signal as possible.
+// The expected 20ms signal cycle is about 16.4ms with a duty cycle in between 1.1ms and 2.0ms.
+// The duty cycle step granularity is 1/15.
+// Examples:
+//   - S0 or M5                          (signal disabled)
+//   - S1  to S66  yield the same result (minimum angular position)
+//   - S67 to S133 yield the same result (2nd step)
+//   - S134                              (3rd step)
+//   - S1000 and above 1000              (maximum angular poisition)
+// Requires:
+//   - VARIABLE_SPINDLE                  enabled
+//   - SPINDLE_PWM_MIN_VALUE             disabled
+//   - ENABLE_PIECEWISE_LINEAR_SPINDLE   disabled
+// Groundwork: https://www.buildlog.net/blog/2017/08/using-grbls-spindle-pwm-to-control-a-servo/
+#define SPINDLE_PWM_AS_SERVO_SIGNAL // Default disabled. Uncomment to enable.
+
 // Used by variable spindle output only. This forces the PWM output to a minimum duty cycle when enabled.
 // The PWM pin will still read 0V when the spindle is disabled. Most users will not need this option, but
 // it may be useful in certain scenarios. This minimum PWM settings coincides with the spindle rpm minimum
