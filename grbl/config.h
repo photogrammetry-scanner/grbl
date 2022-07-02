@@ -48,7 +48,7 @@
 // g-code programs, maybe selected for interface programs.
 // NOTE: If changed, manually update help message in report.c.
 
-#define CMD_RESET 0x18 // ctrl-x.
+#define CMD_RESET 'Q' // ctrl-x.
 #define CMD_STATUS_REPORT '?'
 #define CMD_CYCLE_START '~'
 #define CMD_FEED_HOLD '!'
@@ -64,9 +64,9 @@
 #define CMD_SAFETY_DOOR 0x84
 #define CMD_JOG_CANCEL  0x85
 #define CMD_DEBUG_REPORT 0x86 // Only when DEBUG enabled, sends debug report in '{}' braces.
-#define CMD_FEED_OVR_RESET 0x90         // Restores feed override value to 100%.
-#define CMD_FEED_OVR_COARSE_PLUS 0x91
-#define CMD_FEED_OVR_COARSE_MINUS 0x92
+#define CMD_FEED_OVR_RESET '°'         // Restores feed override value to 100%.
+#define CMD_FEED_OVR_COARSE_PLUS ':'
+#define CMD_FEED_OVR_COARSE_MINUS ';'
 #define CMD_FEED_OVR_FINE_PLUS  0x93
 #define CMD_FEED_OVR_FINE_MINUS  0x94
 #define CMD_RAPID_OVR_RESET 0x95        // Restores rapid override value to 100%.
@@ -581,7 +581,7 @@
 
 // Configure options for the parking motion, if enabled.
 #define PARKING_AXIS Z_AXIS // Define which axis that performs the parking motion
-#define PARKING_TARGET -5.0 // Parking axis target. In mm, as machine coordinate [-max_travel,0].
+#define PARKING_TARGET (-5.0) // Parking axis target. In mm, as machine coordinate [-max_travel,0].
 #define PARKING_RATE 500.0 // Parking fast rate after pull-out in mm/min.
 #define PARKING_PULLOUT_RATE 100.0 // Pull-out/plunge slow feed rate in mm/min.
 #define PARKING_PULLOUT_INCREMENT 5.0 // Spindle pull-out and plunge distance in mm. Incremental distance.
@@ -620,7 +620,7 @@
 #define RPM_POINT23  9627.8  // Used N_PIECES >=3. Junction point between lines 2 and 3.
 #define RPM_POINT34  10813.9 // Used N_PIECES = 4. Junction point between lines 3 and 4.
 #define RPM_LINE_A1  3.197101e-03  // Used N_PIECES >=1. A and B constants of line 1.
-#define RPM_LINE_B1  -3.526076e-1
+#define RPM_LINE_B1  (-3.526076e-1)
 #define RPM_LINE_A2  1.722950e-2   // Used N_PIECES >=2. A and B constants of line 2.
 #define RPM_LINE_B2  8.588176e+01
 #define RPM_LINE_A3  5.901518e-02  // Used N_PIECES >=3. A and B constants of line 3.
