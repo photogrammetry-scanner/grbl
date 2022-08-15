@@ -39,7 +39,7 @@
 
 // Serial baud rate
 // #define BAUD_RATE 230400
-#define BAUD_RATE 28800
+#define BAUD_RATE 38400
 
 // Define realtime command special characters. These characters are 'picked-off' directly from the
 // serial read data stream and are not passed to the grbl line execution parser. Select characters
@@ -126,7 +126,7 @@
 // After homing, Grbl will set by default the entire machine space into negative space, as is typical
 // for professional CNC machines, regardless of where the limit switches are located. Uncomment this
 // define to force Grbl to always set the machine origin at the homed location despite switch orientation.
-// #define HOMING_FORCE_SET_ORIGIN // Uncomment to enable.
+#define HOMING_FORCE_SET_ORIGIN // Uncomment to enable.
 
 // Number of blocks Grbl executes upon startup. These blocks are stored in EEPROM, where the size
 // and addresses are defined in settings.h. With the current settings, up to 2 startup blocks may
@@ -525,7 +525,7 @@
 // written into the Arduino EEPROM via a seperate .INO sketch to contain product data. Altering this
 // macro to not restore the build info EEPROM will ensure this data is retained after firmware upgrades.
 // NOTE: Uncomment to override defaults in settings.h
-// #define SETTINGS_RESTORE_ALL (SETTINGS_RESTORE_DEFAULTS | SETTINGS_RESTORE_PARAMETERS | SETTINGS_RESTORE_STARTUP_LINES | SETTINGS_RESTORE_BUILD_INFO)
+#define SETTINGS_RESTORE_ALL (SETTINGS_RESTORE_DEFAULTS | SETTINGS_RESTORE_PARAMETERS | SETTINGS_RESTORE_STARTUP_LINES | SETTINGS_RESTORE_BUILD_INFO)
 
 // Enable the '$I=(string)' build info write command. If disabled, any existing build info data must
 // be placed into EEPROM via external means with a valid checksum value. This macro option is useful
@@ -654,7 +654,7 @@
 // run out of flash to fit on an Arduino 328p/Uno. Only X and Y axes are supported. Variable
 // spindle/laser mode IS supported, but only for one config option. Core XY, spindle direction
 // pin, and M7 mist coolant are disabled/not supported.
-// #define ENABLE_DUAL_AXIS	// Default disabled. Uncomment to enable.
+// #define ENABLE_DUAL_AXIS // Default disabled. Uncomment to enable.
 
 // Select the one axis to mirror another motor. Only X and Y axis is supported at this time.
 #define DUAL_AXIS_SELECT  X_AXIS  // Must be either X_AXIS or Y_AXIS
