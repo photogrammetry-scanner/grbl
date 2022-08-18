@@ -34,7 +34,7 @@
   #define DEFAULT_Z_STEPS_PER_MM ((200.0*16.0)/1.25) // (steps_revolution * micro_steps) / pitch
   #define DEFAULT_X_MAX_RATE 20000.0 // mm/min
   #define DEFAULT_Y_MAX_RATE 500.0 // mm/min
-  #define DEFAULT_Z_MAX_RATE 200.0 // mm/min
+  #define DEFAULT_Z_MAX_RATE 900.0 // mm/min
   #define DEFAULT_X_ACCELERATION (300.0*60*60) // 10*60*60 mm/min^2 = 10 mm/sec^2
   #define DEFAULT_Y_ACCELERATION (10.0*60*60) // 10*60*60 mm/min^2 = 10 mm/sec^2
   #define DEFAULT_Z_ACCELERATION (10.0*60*60) // 10*60*60 mm/min^2 = 10 mm/sec^2
@@ -59,8 +59,8 @@
   #define DEFAULT_LASER_MODE 0 // false
   #define DEFAULT_HOMING_ENABLE 1  // false
   #define DEFAULT_HOMING_DIR_MASK ((0<<X_AXIS)|(0<<Y_AXIS)|(1<<Z_AXIS))
-  #define DEFAULT_HOMING_FEED_RATE 100.0 // mm/min
-  #define DEFAULT_HOMING_SEEK_RATE 200.0 // mm/min
+  #define DEFAULT_HOMING_FEED_RATE 300.0 // mm/min
+  #define DEFAULT_HOMING_SEEK_RATE 600.0 // mm/min
   #define DEFAULT_HOMING_DEBOUNCE_DELAY 250 // msec (0-65k)
   #define DEFAULT_HOMING_PULLOFF 2.0 // mm
 #endif
